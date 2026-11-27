@@ -1,25 +1,41 @@
+
 from turtle import *
 
+# Configurações / Settings
 diameter = 40
 pop_diameter = 100
 
+# Desenhar balão / Draw balloon
 def draw_balloon():
-    color('purple')
+    clear()
+    color("purple")
     dot(diameter)
 
+# Inflar balão / Inflate balloon
 def inflate_balloon():
     global diameter
-    diameter = diameter + 10
-    draw_balloon()
 
-if diameter >= pop_diameter:
-    clear()
-    diameter = 40
-    write("Pop!")
+    diameter += 10
 
+    if diameter >= pop_diameter:
+        print("Estourou!")
+
+        clear()
+        color("red")
+        write("POP!", align="center", font=("Arial", 30, "bold"))
+
+        diameter = 40
+
+    else:
+        draw_balloon()
+
+# Desenhar balão inicial / Draw initial balloon
 draw_balloon()
-Screen().onkey(inflate_balloon,"Up")
-Screen().listen()
+
+# Configurar teclado / Keyboard setup
+screen = Screen()
+screen.listen()
+screen.onkey(inflate_balloon, "Up")
 
 done()
 
