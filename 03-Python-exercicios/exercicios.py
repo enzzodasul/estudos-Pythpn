@@ -42,9 +42,6 @@ print(f"Medida em milímetros: {milimetros:.2f} mm")
 #-----------------------------------------------------------------------------------------
 
 
-
-
-
 #Exercício 3: Calculadora de IMC Desenvolva um programa que calcule o Índice de Massa Corporal (IMC) de uma pessoa. O programa deve solicitar ao usuário o peso em quilogramas e a altura em metros, e em seguida calcular e exibir o IMC.
 
 
