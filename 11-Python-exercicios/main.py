@@ -37,10 +37,10 @@ else:
     print("Access denied!")
 
 
-# ============================================================
+# =========================================================
 # EXERCÍCIO 3: VALIDADOR DE SENHA
 # EXERCISE 3: PASSWORD VALIDATOR
-# ============================================================
+# ========================================================
 
 # Solicita que o usuário crie uma senha.
 # Asks the user to create a password.
