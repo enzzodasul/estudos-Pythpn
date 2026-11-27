@@ -1,0 +1,884 @@
+
+# ============================================================
+# PYTHON — CLASSES E OBJETOS
+# PYTHON — CLASSES AND OBJECTS
+# ============================================================
+
+
+# ============================================================
+# 1. O QUE É PROGRAMAÇÃO ORIENTADA A OBJETOS?
+# 1. WHAT IS OBJECT-ORIENTED PROGRAMMING?
+# ============================================================
+
+# PT: POO é um paradigma de programação baseado em classes e objetos.
+# EN: OOP is a programming paradigm based on classes and objects.
+
+# PT: Podemos representar elementos do mundo real no código.
+# EN: We can represent real-world elements in code.
+
+# Exemplos / Examples:
+# Pessoa / Person
+# Carro / Car
+# Produto / Product
+# Conta bancária / Bank account
+# Animal / Animal
+
+
+# ============================================================
+# 2. O QUE É UMA CLASSE?
+# 2. WHAT IS A CLASS?
+# ============================================================
+
+# PT: Uma classe é um modelo usado para criar objetos.
+# EN: A class is a blueprint used to create objects.
+
+class Pessoa:
+    pass
+
+
+# ============================================================
+# 3. O QUE É UM OBJETO?
+# 3. WHAT IS AN OBJECT?
+# ============================================================
+
+# PT: Um objeto é uma instância de uma classe.
+# EN: An object is an instance of a class.
+
+class Carro:
+    pass
+
+
+# Criando objetos / Creating objects
+carro1 = Carro()
+carro2 = Carro()
+
+print(carro1)
+print(carro2)
+
+
+# ============================================================
+# 4. ATRIBUTOS
+# 4. ATTRIBUTES
+# ============================================================
+
+# PT: Atributos são características de um objeto.
+# EN: Attributes are characteristics of an object.
+
+class Pessoa:
+    nome = "Enzo"
+    idade = 20
+
+
+pessoa1 = Pessoa()
+
+print(pessoa1.nome)
+print(pessoa1.idade)
+
+
+# ============================================================
+# 5. MÉTODOS
+# 5. METHODS
+# ============================================================
+
+# PT: Métodos são funções definidas dentro de uma classe.
+# EN: Methods are functions defined inside a class.
+
+class Pessoa:
+
+    def apresentar(self):
+        print("Olá! Eu sou uma pessoa.")
+
+    def cumprimentar(self):
+        print("Olá! Tudo bem?")
+
+
+pessoa1 = Pessoa()
+
+pessoa1.apresentar()
+pessoa1.cumprimentar()
+
+
+# ============================================================
+# 6. O QUE É SELF?
+# 6. WHAT IS SELF?
+# ============================================================
+
+# PT: self representa a própria instância do objeto.
+# EN: self represents the current object instance.
+
+class Pessoa:
+
+    def apresentar(self):
+        print("Meu nome é Enzo.")
+
+
+pessoa1 = Pessoa()
+
+pessoa1.apresentar()
+
+# PT: self permite acessar atributos e métodos do próprio objeto.
+# EN: self allows access to the object's own attributes and methods.
+
+
+# ============================================================
+# 7. CONSTRUTOR __INIT__()
+# 7. CONSTRUCTOR __INIT__()
+# ============================================================
+
+# PT: __init__ é executado automaticamente quando criamos um objeto.
+# EN: __init__ runs automatically when we create an object.
+
+class Pessoa:
+
+    def __init__(self):
+        print("Objeto criado!")
+
+
+pessoa1 = Pessoa()
+
+
+# ============================================================
+# 8. CONSTRUTOR COM PARÂMETROS
+# 8. CONSTRUCTOR WITH PARAMETERS
+# ============================================================
+
+class Pessoa:
+
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+
+pessoa1 = Pessoa("Enzo", 20)
+
+print(pessoa1.nome)
+print(pessoa1.idade)
+
+
+# ============================================================
+# 9. CRIANDO VÁRIOS OBJETOS
+# 9. CREATING MULTIPLE OBJECTS
+# ============================================================
+
+class Pessoa:
+
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+
+pessoa1 = Pessoa("Enzo", 20)
+pessoa2 = Pessoa("Carlos", 25)
+pessoa3 = Pessoa("Ana", 22)
+
+print(pessoa1.nome)
+print(pessoa2.nome)
+print(pessoa3.nome)
+
+
+# ============================================================
+# 10. ATRIBUTOS DE INSTÂNCIA
+# 10. INSTANCE ATTRIBUTES
+# ============================================================
+
+# PT: Cada objeto pode ter seus próprios atributos.
+# EN: Each object can have its own attributes.
+
+class Carro:
+
+    def __init__(self, marca, modelo, ano):
+        self.marca = marca
+        self.modelo = modelo
+        self.ano = ano
+
+
+carro1 = Carro("Toyota", "Corolla", 2025)
+carro2 = Carro("Honda", "Civic", 2024)
+
+print(carro1.marca, carro1.modelo)
+print(carro2.marca, carro2.modelo)
+
+
+# ============================================================
+# 11. MÉTODOS COM PARÂMETROS
+# 11. METHODS WITH PARAMETERS
+# ============================================================
+
+class Pessoa:
+
+    def __init__(self, nome):
+        self.nome = nome
+
+    def apresentar(self):
+        print(f"Olá, meu nome é {self.nome}.")
+
+    def fazer_aniversario(self):
+        print(f"{self.nome} está fazendo aniversário!")
+
+
+pessoa1 = Pessoa("Enzo")
+
+pessoa1.apresentar()
+pessoa1.fazer_aniversario()
+
+
+# ============================================================
+# 12. ALTERANDO ATRIBUTOS
+# 12. MODIFYING ATTRIBUTES
+# ============================================================
+
+class Pessoa:
+
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+
+pessoa1 = Pessoa("Enzo", 20)
+
+print(pessoa1.idade)
+
+pessoa1.idade = 21
+
+print(pessoa1.idade)
+
+
+# ============================================================
+# 13. ATRIBUTOS DE CLASSE
+# 13. CLASS ATTRIBUTES
+# ============================================================
+
+# PT: Atributos de classe são compartilhados pela classe e instâncias,
+# salvo quando uma instância define seu próprio atributo com o mesmo nome.
+#
+# EN: Class attributes are shared by the class and instances,
+# unless an instance defines its own attribute with the same name.
+
+class Pessoa:
+
+    especie = "Humano"
+
+    def __init__(self, nome):
+        self.nome = nome
+
+
+pessoa1 = Pessoa("Enzo")
+pessoa2 = Pessoa("Ana")
+
+print(pessoa1.especie)
+print(pessoa2.especie)
+
+
+# ============================================================
+# 14. MÉTODOS DE CLASSE — @classmethod
+# 14. CLASS METHODS — @classmethod
+# ============================================================
+
+# PT: Métodos de classe recebem cls como primeiro parâmetro.
+# EN: Class methods receive cls as their first parameter.
+
+class Pessoa:
+
+    especie = "Humano"
+
+    @classmethod
+    def mostrar_especie(cls):
+        print(cls.especie)
+
+
+Pessoa.mostrar_especie()
+
+
+# ============================================================
+# 15. MÉTODOS ESTÁTICOS — @staticmethod
+# 15. STATIC METHODS — @staticmethod
+# ============================================================
+
+# PT: Métodos estáticos não recebem self ou cls automaticamente.
+# EN: Static methods do not automatically receive self or cls.
+
+class Matematica:
+
+    @staticmethod
+    def somar(a, b):
+        return a + b
+
+
+print(Matematica.somar(10, 20))
+
+
+# ============================================================
+# 16. ENCAPSULAMENTO
+# 16. ENCAPSULATION
+# ============================================================
+
+# PT: Encapsulamento organiza e controla o acesso aos dados.
+# EN: Encapsulation organizes and controls access to data.
+
+class Conta:
+
+    def __init__(self, saldo):
+        self._saldo = saldo
+
+    def consultar_saldo(self):
+        return self._saldo
+
+
+conta1 = Conta(1000)
+
+print(conta1.consultar_saldo())
+
+# PT: O underline indica que o atributo é de uso interno por convenção.
+# EN: The underscore indicates that the attribute is intended for
+# internal use by convention.
+
+
+# ============================================================
+# 17. ATRIBUTOS COM DOIS UNDERLINES
+# 17. DOUBLE UNDERSCORE ATTRIBUTES
+# ============================================================
+
+# PT: __saldo ativa o name mangling para evitar colisões de nomes.
+# EN: __saldo activates name mangling to help avoid name collisions.
+
+class Conta:
+
+    def __init__(self, saldo):
+        self.__saldo = saldo
+
+    def consultar_saldo(self):
+        return self.__saldo
+
+
+conta1 = Conta(500)
+
+print(conta1.consultar_saldo())
+
+# PT: Isso não é privacidade absoluta, mas dificulta acesso acidental.
+# EN: This is not absolute privacy, but it discourages accidental access.
+
+
+# ============================================================
+# 18. PROPRIEDADES — @property
+# 18. PROPERTIES — @property
+# ============================================================
+
+# PT: @property permite acessar um método como se fosse um atributo.
+# EN: @property lets us access a method as if it were an attribute.
+
+class Produto:
+
+    def __init__(self, preco):
+        self._preco = preco
+
+    @property
+    def preco(self):
+        return self._preco
+
+
+produto1 = Produto(100)
+
+print(produto1.preco)
+
+
+# ============================================================
+# 19. PROPERTY COM SETTER
+# 19. PROPERTY WITH SETTER
+# ============================================================
+
+class Produto:
+
+    def __init__(self, preco):
+        self._preco = preco
+
+    @property
+    def preco(self):
+        return self._preco
+
+    @preco.setter
+    def preco(self, novo_preco):
+
+        if novo_preco < 0:
+            raise ValueError("O preço não pode ser negativo.")
+
+        self._preco = novo_preco
+
+
+produto1 = Produto(100)
+
+produto1.preco = 150
+
+print(produto1.preco)
+
+
+# ============================================================
+# 20. HERANÇA
+# 20. INHERITANCE
+# ============================================================
+
+# PT: Herança permite criar uma classe baseada em outra.
+# EN: Inheritance allows creating a class based on another.
+
+class Animal:
+
+    def comer(self):
+        print("O animal está comendo.")
+
+
+class Cachorro(Animal):
+    pass
+
+
+cachorro1 = Cachorro()
+
+cachorro1.comer()
+
+
+# ============================================================
+# 21. HERANÇA COM CONSTRUTOR
+# 21. INHERITANCE WITH CONSTRUCTOR
+# ============================================================
+
+class Animal:
+
+    def __init__(self, nome):
+        self.nome = nome
+
+
+class Cachorro(Animal):
+
+    def latir(self):
+        print(f"{self.nome} está latindo!")
+
+
+cachorro1 = Cachorro("Rex")
+
+cachorro1.latir()
+
+
+# ============================================================
+# 22. SUPER()
+# 22. SUPER()
+# ============================================================
+
+# PT: super() permite acessar métodos da classe pai.
+# EN: super() allows access to methods from the parent class.
+
+class Animal:
+
+    def __init__(self, nome):
+        self.nome = nome
+
+
+class Cachorro(Animal):
+
+    def __init__(self, nome, raca):
+        super().__init__(nome)
+        self.raca = raca
+
+
+cachorro1 = Cachorro("Rex", "Labrador")
+
+print(cachorro1.nome)
+print(cachorro1.raca)
+
+
+# ============================================================
+# 23. SOBRESCRITA DE MÉTODOS
+# 23. METHOD OVERRIDING
+# ============================================================
+
+# PT: Uma classe filha pode redefinir um método da classe pai.
+# EN: A child class can redefine a method from the parent class.
+
+class Animal:
+
+    def emitir_som(self):
+        print("Som do animal.")
+
+
+class Cachorro(Animal):
+
+    def emitir_som(self):
+        print("Au au!")
+
+
+cachorro1 = Cachorro()
+
+cachorro1.emitir_som()
+
+
+# ============================================================
+# 24. POLIMORFISMO
+# 24. POLYMORPHISM
+# ============================================================
+
+# PT: Objetos diferentes podem responder ao mesmo método
+# de maneiras diferentes.
+#
+# EN: Different objects can respond to the same method
+# in different ways.
+
+class Cachorro:
+
+    def emitir_som(self):
+        print("Au au!")
+
+
+class Gato:
+
+    def emitir_som(self):
+        print("Miau!")
+
+
+animais = [Cachorro(), Gato()]
+
+for animal in animais:
+    animal.emitir_som()
+
+
+# ============================================================
+# 25. COMPOSIÇÃO
+# 25. COMPOSITION
+# ============================================================
+
+# PT: Composição permite que uma classe tenha objetos de outra classe.
+# EN: Composition allows a class to contain objects of another class.
+
+class Motor:
+
+    def ligar(self):
+        print("Motor ligado!")
+
+
+class Carro:
+
+    def __init__(self):
+        self.motor = Motor()
+
+    def ligar_carro(self):
+        self.motor.ligar()
+
+
+carro1 = Carro()
+
+carro1.ligar_carro()
+
+
+# ============================================================
+# 26. MÉTODOS ESPECIAIS — DUNDER METHODS
+# 26. SPECIAL METHODS — DUNDER METHODS
+# ============================================================
+
+# PT: Métodos especiais permitem definir comportamentos dos objetos.
+# EN: Special methods allow us to define object behavior.
+
+class Pessoa:
+
+    def __init__(self, nome):
+        self.nome = nome
+
+    def __str__(self):
+        return f"Pessoa: {self.nome}"
+
+
+pessoa1 = Pessoa("Enzo")
+
+print(pessoa1)
+
+
+# ============================================================
+# 27. __LEN__ E __EQ__
+# 27. __LEN__ AND __EQ__
+# ============================================================
+
+class Equipe:
+
+    def __init__(self, membros):
+        self.membros = membros
+
+    def __len__(self):
+        return len(self.membros)
+
+
+equipe = Equipe(["Ana", "Carlos", "Enzo"])
+
+print(len(equipe))  # 3
+
+
+class Produto:
+
+    def __init__(self, nome, preco):
+        self.nome = nome
+        self.preco = preco
+
+    def __eq__(self, outro):
+        return self.preco == outro.preco
+
+
+produto1 = Produto("Notebook", 3000)
+produto2 = Produto("Computador", 3000)
+
+print(produto1 == produto2)  # True
+
+
+# ============================================================
+# 28. VERIFICANDO O TIPO DE UM OBJETO
+# 28. CHECKING AN OBJECT'S TYPE
+# ============================================================
+
+class Pessoa:
+    pass
+
+
+pessoa1 = Pessoa()
+
+print(type(pessoa1))
+print(isinstance(pessoa1, Pessoa))  # True
+
+
+# ============================================================
+# 29. LISTA DE OBJETOS
+# 29. LIST OF OBJECTS
+# ============================================================
+
+class Produto:
+
+    def __init__(self, nome, preco):
+        self.nome = nome
+        self.preco = preco
+
+
+produtos = [
+    Produto("Notebook", 3500),
+    Produto("Mouse", 100),
+    Produto("Teclado", 200)
+]
+
+for produto in produtos:
+    print(produto.nome, produto.preco)
+
+
+# ============================================================
+# 30. DATACLASSES
+# 30. DATACLASSES
+# ============================================================
+
+# PT: dataclass reduz o código necessário para criar classes
+# principalmente classes que armazenam dados.
+#
+# EN: dataclass reduces the code needed to create classes,
+# especially classes that store data.
+
+from dataclasses import dataclass
+
+
+@dataclass
+class Pessoa:
+
+    nome: str
+    idade: int
+
+
+pessoa1 = Pessoa("Enzo", 20)
+
+print(pessoa1)
+print(pessoa1.nome)
+
+
+# ============================================================
+# 31. EXEMPLO PRÁTICO — CONTA BANCÁRIA
+# 31. PRACTICAL EXAMPLE — BANK ACCOUNT
+# ============================================================
+
+class ContaBancaria:
+
+    def __init__(self, titular, saldo=0):
+        self.titular = titular
+        self.saldo = saldo
+
+    def depositar(self, valor):
+
+        if valor <= 0:
+            print("Valor inválido.")
+            return
+
+        self.saldo += valor
+        print("Depósito realizado!")
+
+    def sacar(self, valor):
+
+        if valor <= 0:
+            print("Valor inválido.")
+            return
+
+        if valor > self.saldo:
+            print("Saldo insuficiente.")
+            return
+
+        self.saldo -= valor
+        print("Saque realizado!")
+
+    def consultar_saldo(self):
+        print(f"Saldo: R$ {self.saldo:.2f}")
+
+
+conta = ContaBancaria("Enzo", 1000)
+
+conta.consultar_saldo()
+conta.depositar(500)
+conta.sacar(200)
+conta.consultar_saldo()
+
+
+# ============================================================
+# 32. EXERCÍCIOS RESOLVIDOS
+# 32. SOLVED EXERCISES
+# ============================================================
+
+# EXERCÍCIO 1 / EXERCISE 1
+# Crie uma classe Pessoa com nome e idade.
+# Create a Person class with name and age.
+
+class Pessoa:
+
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def apresentar(self):
+        print(f"Meu nome é {self.nome} e tenho {self.idade} anos.")
+
+
+pessoa = Pessoa("Enzo", 20)
+
+pessoa.apresentar()
+
+
+# EXERCÍCIO 2 / EXERCISE 2
+# Crie uma classe Retangulo com método para calcular a área.
+# Create a Rectangle class with a method to calculate its area.
+
+class Retangulo:
+
+    def __init__(self, largura, altura):
+        self.largura = largura
+        self.altura = altura
+
+    def calcular_area(self):
+        return self.largura * self.altura
+
+
+retangulo = Retangulo(10, 5)
+
+print(retangulo.calcular_area())  # 50
+
+
+# EXERCÍCIO 3 / EXERCISE 3
+# Crie uma classe Cachorro com um método latir.
+# Create a Dog class with a bark method.
+
+class Cachorro:
+
+    def __init__(self, nome):
+        self.nome = nome
+
+    def latir(self):
+        print(f"{self.nome}: Au au!")
+
+
+cachorro = Cachorro("Rex")
+
+cachorro.latir()
+
+
+# ============================================================
+# 33. EXERCÍCIOS PARA PRATICAR
+# 33. PRACTICE EXERCISES
+# ============================================================
+
+# 1. Crie uma classe Livro com os atributos titulo e autor.
+#    Create a Book class with title and author attributes.
+
+# 2. Crie uma classe Carro com marca e modelo.
+#    Create a Car class with brand and model.
+
+# 3. Crie um método acelerar() que exiba uma mensagem.
+#    Create an accelerate() method that displays a message.
+
+# 4. Crie uma classe Aluno com nome e nota.
+#    Create a Student class with name and grade.
+
+# 5. Crie um método que verifique se o aluno foi aprovado.
+#    Create a method that checks whether the student passed.
+
+# 6. Crie uma classe Animal e duas classes filhas: Gato e Cachorro.
+#    Create an Animal class and two child classes: Cat and Dog.
+
+# 7. Crie uma classe ContaBancaria com métodos depositar e sacar.
+#    Create a BankAccount class with deposit and withdraw methods.
+
+# 8. Crie uma classe Produto com uma propriedade que impeça preço negativo.
+#    Create a Product class with a property that prevents negative prices.
+
+
+# ============================================================
+# 34. RESUMO GERAL
+# 34. GENERAL SUMMARY
+# ============================================================
+
+# Classe / Class:
+# PT: Modelo para criar objetos.
+# EN: Blueprint for creating objects.
+
+# Objeto / Object:
+# PT: Instância de uma classe.
+# EN: Instance of a class.
+
+# Atributo / Attribute:
+# PT: Característica de um objeto.
+# EN: Characteristic of an object.
+
+# Método / Method:
+# PT: Função definida dentro de uma classe.
+# EN: Function defined inside a class.
+
+# self:
+# PT: Referência à instância atual.
+# EN: Reference to the current instance.
+
+# __init__:
+# PT: Inicializa um objeto.
+# EN: Initializes an object.
+
+# Herança / Inheritance:
+# PT: Uma classe herda características de outra.
+# EN: One class inherits features from another.
+
+# Encapsulamento / Encapsulation:
+# PT: Organiza e controla o acesso aos dados.
+# EN: Organizes and controls access to data.
+
+# Polimorfismo / Polymorphism:
+# PT: Objetos diferentes respondem ao mesmo método.
+# EN: Different objects respond to the same method.
+
+# Composição / Composition:
+# PT: Uma classe contém objetos de outra classe.
+# EN: One class contains objects of another class.
+
+# @classmethod:
+# PT: Método associado à classe.
+# EN: Method associated with the class.
+
+# @staticmethod:
+# PT: Método que não recebe self ou cls automaticamente.
+# EN: Method that does not automatically receive self or cls.
+
+# @property:
+# PT: Acessa um método como atributo.
+# EN: Accesses a method like an attribute.
+
+# @dataclass:
+# PT: Facilita a criação de classes para armazenar dados.
+# EN: Simplifies creating data-holding classes.
